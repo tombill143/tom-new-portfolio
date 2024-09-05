@@ -3,14 +3,10 @@ import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
-
 
 export const Skills = () => {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5
     },
@@ -30,34 +26,34 @@ export const Skills = () => {
 
   return (
     <section className="skill" id="skills">
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                    <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
-                        <p>As a UX designer and web developer, I create user-friendly, visually appealing digital experiences. I excel in using HTML, CSS, and JavaScript to build responsive and accessible websites that meet both user needs and business goals. My skills in tools like Figma and Adobe XD help me bridge the gap between design and development, ensuring that my work is both aesthetically pleasing and highly functional.<br></br><br></br> I have recently been trying to become more confident using react but would like to use other frameworks for other projects like Angular or Svelte</p>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Web Development</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>UX Design</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>Motion Graphics</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Graphic Design</h5>
-                            </div>
-                        </Carousel>
-                    </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <div className="skill-bx wow zoomIn">
+              <h2>Skills</h2>
+              <p>As a UX designer and web developer, I create user-friendly, visually appealing digital experiences. I excel in using HTML, CSS, and JavaScript to build responsive and accessible websites that meet both user needs and business goals. My skills in tools like Figma and Adobe XD help me bridge the gap between design and development, ensuring that my work is both aesthetically pleasing and highly functional.<br /><br /> I have recently been trying to become more confident using React but would like to use other frameworks for other projects like Angular or Svelte.</p>
+              <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+                <div className="item">
+                  <img src={meter1} alt="Web Development Skill Meter" />
+                  <h5>Web Development</h5>
                 </div>
+                <div className="item">
+                  <img src={meter2} alt="UX Design Skill Meter" />
+                  <h5>UX Design</h5>
+                </div>
+                <div className="item">
+                  <img src={meter3} alt="Motion Graphics Skill Meter" />
+                  <h5>Motion Graphics</h5>
+                </div>
+                <div className="item">
+                  <img src={meter1} alt="Graphic Design Skill Meter" />
+                  <h5>Graphic Design</h5>
+                </div>
+              </Carousel>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-  )
-}
+  );
+};
