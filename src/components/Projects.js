@@ -6,55 +6,70 @@ import projImg3 from "../assets/img/diary.png";
 import projImg4 from "../assets/img/actors.png";
 import projImg5 from "../assets/img/hogwarts-admin.png";
 import projImg6 from "../assets/img/coffee-delight.png";
+import projImg7 from "../assets/img/falling-head-pic.png"
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
-
   const projects = [
     {
       title: "Paper, Rock, Scissors",
       description: "A game I made being when first introduced to js",
       imgUrl: projImg1,
       link: "http://techtom.dk/rock-paper-scissors-master/",
-      alt: "Screenshot of Paper, Rock, Scissors game"
+      alt: "Screenshot of Paper, Rock, Scissors game",
+      category: "Basic School Projects"
     },
     {
       title: "The Big fat String",
       description: "A js programme I made to learn how to sort words and letters",
       imgUrl: projImg2,
       link: "http://techtom.dk/big-fat-string-master/",
-      alt: "Screenshot of The Big Fat String program"
+      alt: "Screenshot of The Big Fat String program",
+      category: "Basic School Projects"
     },
     {
       title: "Typewriter",
       description: "A programme I made to simulate a typewriter effect by gradually displaying text on the screen.",
       imgUrl: projImg3,
-       link: "http://techtom.dk/typewriter_exercise-master/",
-      alt: "Screenshot of Typewriter simulation"
+      link: "http://techtom.dk/typewriter_exercise-master/",
+      alt: "Screenshot of Typewriter simulation",
+      category: "Basic School Projects"
     },
     {
       title: "Actor List",
       description: "A small database for actors",
       imgUrl: projImg4,
       link: "http://techtom.dk/actors-master/",
-      alt: "Screenshot of Actor List database"
+      alt: "Screenshot of Actor List database",
+      category: "Basic School Projects"
     },
     {
       title: "Hogwarts Admin Dashboard",
       description: "My first big frontend project",
       imgUrl: projImg5,
-       link: "http://techtom.dk/sortingHogwarts-master/",
-      alt: "Screenshot of Hogwarts Admin Dashboard"
+      link: "http://techtom.dk/sortingHogwarts-master/",
+      alt: "Screenshot of Hogwarts Admin Dashboard",
+      category: "Basic School Projects"
     },
     {
-      title: "Coffee Delight",
-      description: "A styling project for a fictional coffee shop",
-      imgUrl: projImg6,
-      link: "http://techtom.dk/coffee/",
-      alt: "Screenshot of Coffee Delight website"
-    },
+    title: "Coffee Delight",
+    description: "A styling project for a fictional coffee shop",
+    imgUrl: projImg6,
+    link: "http://techtom.dk/coffee/",
+    alt: "Screenshot of Coffee Delight website",
+    category: "Basic School Projects"
+  },
+  {
+      title: "Falling Heads Game",
+      description: "A fun game where players control falling heads and try to catch them.",
+      imgUrl: projImg7,
+      link: "http://techtom.dk/game-project/", // Replace this with the actual link to the game
+      alt: "Screenshot of Falling Heads Game",
+      category: "Post Grad Projects"
+    }
+    
   ];
 
   return (
@@ -64,72 +79,78 @@ export const Projects = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>Here is a list of projects I have previously worked on alongside projects over the previous years</p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                    <Nav.Item>
-                      <Nav.Link eventKey="first"> Basic School Projects</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="second">Post Grad Projets</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="third">PHP Projects</Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                    <Tab.Pane eventKey="second">
-                      <Row>
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <h2>Projects</h2>
+                  <p>Here is a list of projects I have previously worked on alongside projects over the previous years</p>
+                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                    <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                      <Nav.Item>
+                        <Nav.Link eventKey="first">Basic School Projects</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="second">Post Grad Projects</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="third">PHP Projects</Nav.Link>
+                      </Nav.Item>
+                    </Nav>
+                    <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                      {/* Post Grad Projects Tab */}
+                      <Tab.Pane eventKey="second">
+                        <Row>
+                          {
+                            projects.filter(project => project.category === "Post Grad Projects").map((project, index) => {
+                              return (
+                                <ProjectCard
+                                  key={index}
+                                  {...project}
                                 />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="first">
-                      <Row>
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
+                              );
+                            })
+                          }
+                        </Row>
+                      </Tab.Pane>
+
+                      {/* Basic School Projects Tab */}
+                      <Tab.Pane eventKey="first">
+                        <Row>
+                          {
+                            projects.filter(project => project.category === "Basic School Projects").map((project, index) => {
+                              return (
+                                <ProjectCard
+                                  key={index}
+                                  {...project}
                                 />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
-                      <Row>
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
+                              );
+                            })
+                          }
+                        </Row>
+                      </Tab.Pane>
+
+                      {/* PHP Projects Tab */}
+                      <Tab.Pane eventKey="third">
+                        <Row>
+                          {
+                            projects.filter(project => project.category === "PHP Projects").map((project, index) => {
+                              return (
+                                <ProjectCard
+                                  key={index}
+                                  {...project}
                                 />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container>
-              </div>}
+                              );
+                            })
+                          }
+                        </Row>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Tab.Container>
+                </div>
+              }
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
       <img className="background-image-right" src={colorSharp2} alt="Background decoration" />
     </section>
-  )
-}
+  );
+};
