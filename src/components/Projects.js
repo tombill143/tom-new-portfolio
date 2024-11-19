@@ -74,7 +74,7 @@ export const Projects = () => {
       title: "Todo list Application",
       description: "A simple project utilising data from a postgres database",
       imgUrl: projImg8,
-      link: "toms-todolist-app-master.vercel.app",
+      link: "https://toms-todolist-app-master.vercel.app/",
       category: "Framework Projects" 
     }
     
@@ -96,7 +96,7 @@ export const Projects = () => {
                         <Nav.Link eventKey="first">Basic School Projects</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="second">Post Grad Projects</Nav.Link>
+                        <Nav.Link eventKey="second">Game Projects</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
                         <Nav.Link eventKey="third">Framework Projects</Nav.Link>
