@@ -7,6 +7,7 @@ import projImg4 from "../assets/img/actors.png";
 import projImg5 from "../assets/img/hogwarts-admin.png";
 import projImg6 from "../assets/img/coffee-delight.png";
 import projImg7 from "../assets/img/falling-head-pic.png"
+import projImg8 from "../assets/img/better-todo-image.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -68,6 +69,13 @@ export const Projects = () => {
       link: "http://techtom.dk/game-project/", // Replace this with the actual link to the game
       alt: "Screenshot of Falling Heads Game",
       category: "Post Grad Projects"
+    },
+    {
+      title: "Todo list Application",
+      description: "A simple project utilising data from a postgres database",
+      imgUrl: projImg8,
+      link: "toms-todolist-app-master.vercel.app",
+      category: "Framework Projects" 
     }
     
   ];
@@ -91,7 +99,7 @@ export const Projects = () => {
                         <Nav.Link eventKey="second">Post Grad Projects</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="third">PHP Projects</Nav.Link>
+                        <Nav.Link eventKey="third">Framework Projects</Nav.Link>
                       </Nav.Item>
                     </Nav>
                     <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
@@ -127,11 +135,11 @@ export const Projects = () => {
                         </Row>
                       </Tab.Pane>
 
-                      {/* PHP Projects Tab */}
+                      {/* Framework Projects Tab */}
                       <Tab.Pane eventKey="third">
                         <Row>
                           {
-                            projects.filter(project => project.category === "PHP Projects").map((project, index) => {
+                            projects.filter(project => project.category === "Framework Projects").map((project, index) => {
                               return (
                                 <ProjectCard
                                   key={index}
