@@ -8,6 +8,7 @@ import projImg5 from "../assets/img/hogwarts-admin.png";
 import projImg6 from "../assets/img/coffee-delight.png";
 import projImg7 from "../assets/img/falling-head-pic.png"
 import projImg8 from "../assets/img/better-todo-image.png";
+import projImg9 from "../assets/img/techtomblog.png"
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -75,6 +76,13 @@ export const Projects = () => {
       description: "A simple project utilising data from a postgres database",
       imgUrl: projImg8,
       link: "https://toms-todolist-app-master.vercel.app/",
+      category: "Framework Projects" 
+    },
+    {
+      title: "My first functioning Blog Application",
+      description: " A blog application built with React and Supabase allowing users to create and manage blog posts.",
+      imgUrl: projImg9,
+      link: "https://techtomblog.netlify.app/",
       category: "Framework Projects" 
     }
     
